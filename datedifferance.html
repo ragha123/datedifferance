@@ -1,0 +1,57 @@
+<html>
+<head>
+<style>
+     body{
+background-color: aquamarine;
+  }
+  table{
+       width:20%;
+       height:20%;
+       border:4px solid black;
+     
+  margin-left: 50;
+  margin-right: 50;
+  margin-top: 170;
+  margin-bottom: 50;
+
+
+  }
+</style>
+</head>
+<body>
+<center>
+<table border="4">
+<tr>
+<td> date 1:</td>
+<td><input type="date" id="d1"></td>
+</tr>
+<tr>
+<td> date 2:</td>
+<td><input type="date" id="d2"</td>
+</tr>
+</table>
+<input type="button" id="button" value="click here to check the different" onclick="compare()"/>
+<br/>
+<p id="output"></p>
+</center>
+<script>
+     function compare()
+{
+    var D1=new Date(document.getElementById('d1').value);
+         var D2=new Date(document.getElementById('d2').value);
+var res;
+         if (isNaN(D1) || isNaN(D2)){
+res = "Select Both the Dates";
+}
+else if (D1-D2 <0){
+res = "Date 1 Must be greater than Date 2";
+}
+else{
+res="The number of days are "+(D2-D1)/(1000*60*60*24);
+}
+   
+  document.getElementById("output").innerHTML=res;
+}
+</script>
+</body>
+</html>
